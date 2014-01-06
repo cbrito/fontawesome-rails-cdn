@@ -8,7 +8,7 @@ module FontAwesome::Rails::CDN
       fontawesome_cdn_url(host, options)
     end
 
-    def fontawesome_stylesheet_link_tag(host, options = {}, html_options = {})
+    def fontawesome_stylesheet_link_tag(host = DEFAULT_HOST, options = {}, html_options = {})
       local = fontawesome_stylesheet_url(:local, options)
 
       if OFFLINE and !options[:force]
@@ -25,7 +25,7 @@ module FontAwesome::Rails::CDN
 
       {
         :netdna => "//netdna.bootstrapcdn.com/font-awesome/#{version}/css/font-awesome.min.css",
-        :local  => "font-awesome-#{version}.css"
+        :local  => "font-awesome-#{version}.min.css"
       }[host]
     end
   end

@@ -19,11 +19,15 @@ Easily add Font Awesome to your Rails 3 or 4 project leveraging a CDN.
 
 
 __Gemfile__
+
+Update your Gemfile to include this gem:
+
 ```ruby
 ...
 gem 'fontawesome-rails-cdn'
 ```
 
+Run `bundle install` to update your local gems. Restart your Rails server if necessary.
 
 __Layout__
 

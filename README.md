@@ -21,14 +21,15 @@ Easily add Font Awesome to your Rails 3 or 4 project leveraging a CDN.
 __Gemfile__
 ```ruby
 ...
-gem 'fontawesome-rails-cdn
+gem 'fontawesome-rails-cdn'
 ```
 
 
 __Layout__
+
 The gem will add the  `fontawesome_stylesheet_link_tag` helper. Add this to your layout files inside the `head` section to automatically include.
 
-```rails
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,8 +37,10 @@ The gem will add the  `fontawesome_stylesheet_link_tag` helper. Add this to your
     <%= fontawesome_stylesheet_link_tag %>
     ...
   </head>
+ ...
 ```
 
 ## License
 (c) 2014 Christopher Brito
+
 MIT License - reference [LICENSE](/LICENSE) file

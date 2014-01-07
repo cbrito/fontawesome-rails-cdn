@@ -2,7 +2,7 @@ module FontAwesome::Rails::CDN
   module ActionViewExtensions
     OFFLINE = ( ::Rails.env.development? )
     DEFAULT_HOST = :netdna
-    FONTAWESOME_VERSIONS = [ '3.2.1' ]
+    FONTAWESOME_VERSIONS = [ '4.0.3', '3.2.1' ]
 
     def fontawesome_stylesheet_url(host = DEFAULT_HOST, options = {})
       fontawesome_cdn_url(host, options)

@@ -1,7 +1,7 @@
 module FontAwesome
   module Rails
     module CDN
-      VERSION = '3.2.1'
+      VERSION = '4.0.3'
     end # module CDN
   end # module Rails
 end # module FontAwesome

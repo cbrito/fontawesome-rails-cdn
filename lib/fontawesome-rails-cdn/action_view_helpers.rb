@@ -10,8 +10,9 @@ module FontAwesome::Rails::CDN
 
     def fontawesome_stylesheet_link_tag(host = DEFAULT_HOST, options = {}, html_options = {})
       local = fontawesome_stylesheet_url(:local, options)
+      options[:version] = options[:version] || FONTAWESOME_VERSIONS.first
 
-      if OFFLINE and !options[:force]
+      if OFFLINE and !options[:force] and FONTAWESOME_VERSIONS.include?(options[:version])
         stylesheet_link_tag(local, html_options)
       else
         stylesheet_link_tag(fontawesome_stylesheet_url(host, options), html_options)

@@ -44,6 +44,35 @@ The gem will add the  `fontawesome_stylesheet_link_tag` helper. Add this to your
  ...
 ```
 
+## Changing Default Behavior
+
+### Forcing development mode to use the CDN
+
+You can ensure the development environment follows the same behavior as production by using the `force: true` parameter in the `fontawesome_stylesheet_link_tag`.
+
+```ruby
+    <%= fontawesome_stylesheet_link_tag :netdna, force: true %>
+```
+
+### Using a specific Font Awesome Version
+
+Passing the `version` parameter in the `fontawesome_stylesheet_link_tag` allows you to override the default behavior. If a specific version is not included in the gem, it will be pulled from the CDN even if in development mode.
+
+```ruby
+    <%= fontawesome_stylesheet_link_tag :netdna, version: "3.2.1" %>
+```
+
+
+## Versioning
+
+The gem follows the versioning used by Font Awesome. I.e., the 3.2.1 version of the gem defaults to version 3.2.1 of Font Awesome. the 4.0.3 version of the gem points to the 4.0.3 version of Font Awesome.
+
+All gems can point to a specific version of Font Awesome hosted on the CDN by passing the `version` option into the `fontawesome_stylesheet_link_tag`.
+
+```ruby
+    <%= fontawesome_stylesheet_link_tag :netdna, version: "3.2.1" %>
+```
+
 ## License
 (c) 2014 Christopher Brito
 

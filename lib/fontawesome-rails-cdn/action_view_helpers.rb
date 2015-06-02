@@ -1,7 +1,7 @@
 module FontAwesome::Rails::CDN
   module ActionViewExtensions
     OFFLINE = ( ::Rails.env.development? )
-    DEFAULT_HOST = :netdna
+    DEFAULT_HOST = :maxcdn
     FONTAWESOME_VERSIONS = [ '4.0.3', '3.2.1' ]
 
     def fontawesome_stylesheet_url(host = DEFAULT_HOST, options = {})
@@ -24,10 +24,13 @@ module FontAwesome::Rails::CDN
     def fontawesome_cdn_url(host, options = {})
       version  = options[:version] || FONTAWESOME_VERSIONS.first
 
-      {
-        :netdna => "//netdna.bootstrapcdn.com/font-awesome/#{version}/css/font-awesome.min.css",
+      urls = {
+        :maxcdn -> "//maxcdn.bootstrapcdn.com/font-awesome/#{version}/css/font-awesome.min.css",
         :local  => "font-awesome-#{version}.min.css"
-      }[host]
+      }
+      # for older compatibility
+      urls[:netdna] = urls[:maxcdn]
+      urls[host]
     end
   end
 end
